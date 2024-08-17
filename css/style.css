@@ -1,0 +1,112 @@
+ *{
+     box-sizing: border-box;
+ }
+  body {
+      margin: 0 auto;
+      padding: 0;
+      background:   repeating-linear-gradient(to top left, cadetblue, coral) ;
+      text-align: center;
+      color: whitesmoke;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    
+      }
+      header {
+         height: 90vh; 
+          
+      }
+      .start {
+          height: 35px;
+          padding: 6px;
+          border: 2px solid cadetblue;
+          border-radius: 15px;
+          color: white;
+          background: cadetblue; 
+          transition: all 0.5s;   
+      }
+      .start:hover {
+          border: 2px solid cadetblue;
+          border-radius: 15px;
+          color: cadetblue;
+          background: white;    
+      }
+       .learnMore {
+          height: 35px;
+          padding: 6px;
+          border: 2px solid cadetblue;
+          border-radius: 15px;
+          color: cadetblue;
+          background: white;    
+      }
+      .learnMore:hover{
+          height: 35px;
+          padding: 6px;
+          border: 2px solid cadetblue;
+          border-radius: 15px;
+          color: white;
+          background: cadetblue;    
+      }
+      a {
+          text-decoration: none;
+          color: white;
+      }
+      a:hover {
+          color: cadetblue;
+      }
+      
+      main {
+         flex: 1 0 auto;
+      }
+      footer {
+         color: #fff;
+         background: #333;
+         position: relative; /* required to position the copyright at the bottom */
+         font-size: 80%;
+      }
+      .footer-copyright {
+         width: 100%;
+         height: 40px;
+         background: #111;
+         /* positions the copyright at the bottom of the footer */
+         padding: 10px;
+         position: absolute;
+         bottom: 0px;
+         left: 0px;
+      }
+      .footer-body {
+         margin-bottom: 40px;
+      }
+      /* the clearfix hack */
+      .footer-body::after {
+         content: "";
+         display: block;
+         clear: both;
+      }
+      /* float the divs */
+      .footer-body > div {
+         float: left;
+         padding: 20px;
+      }
+      /* sets the width of the first column */
+      .footer-body > div:first-child {
+         font-size: 150%;
+         width: 35%;
+         text-align: center;
+      }
+      /* sets the width of the second column */
+      .footer-body > div:last-child {
+         width: 65%;
+      } .footer-body ul {
+         list-style-type: none;
+         margin: 0px;
+         padding: 0px;
+         text-align: center;
+      }
+      .footer-body li > a {
+         color: white;
+         text-decoration: none;
+         margin-bottom: 7px;
+      }
+   </style>
+</head>

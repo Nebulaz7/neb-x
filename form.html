@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style>
+   body{
+  background: white;
+  color: black;
+  margin: 0;
+  min-height: 100vh;
+}
+  header {
+  padding: 10px;
+  
+  
+  }
+img {
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+}
+   section {
+   flex: 100px;
+   color: #000;
+   text-align: center;
+   padding: 10px;
+   margin: 10px;
+}
+   input {
+   border: none;
+   border-bottom: 2px solid cadetblue;
+   padding: 10px;
+   outline: none;
+   color: ;
+   width: 300px;
+   transition: width .6s;
+   }
+   input:hover {
+   outline: none;
+   border-bottom: 3px solid cadetblue;
+   padding: 10px;
+   
+   }
+   span {
+   font-size: 50px;
+   }
+   button {
+   border: 1px solid cadetblue;
+   outline: none;
+   padding: 10px;
+   border-radius: 5px;
+   width: 320px;
+   background: cadetblue;
+   color: white;
+   transition: all 0.5s;
+   }
+   button:hover {
+   border: 2px solid cadetblue;
+   outline: none;
+   padding: 10px;
+   border-radius: 5px;
+   background: white;
+   color: cadetblue;
+   }
+   a {
+   text-decoration: none;
+   color: cadetblue;
+   }
+        
+    </style>
+</head>
+<body>
+    <section>
+<center>
+<img src="img/avatar.jpg"  />
+<p><input type="text"  placeholder="Username" id="username" required/> </p>
+<p><input type="password" placeholder="Password"  id="password"  required/></p>
+<p> </p>
+<button onclick="btnAction()"> <a href="Wallet.html"> Login </a></button>
+</center>
+<p> </p>
+<a href="index.html" onclick=""> Forgot password </a>
+<center>
+<h5> Don't have an account? <a href="#" >sign up </a></h5>
+</section>
+<script src="js/script.js" ></script>
+</body>
+</html>

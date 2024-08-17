@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wallet Dashboard</title>
+	<script src="js/jquery-3.7.1.min.js" ></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="css/wallet.css">
+</head>
+
+<body>
+	<header>
+	
+ <a class="open-nav" onclick="openNav()"><i class="fa fa-user-circle-o"></i></a>
+	 <div id="mySidenav" class="sidenav">
+	 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>	 
+		 <nav> 
+	 				<a href="#" >Home</a>
+	 				<a href="#" >About</a>
+	 				<a href="#" >Contact</a>
+	 	</nav>
+	</div>
+	<p style="text-align: left; margin-left: 5px;p" >Welcome back, Victor </p>
+		<button class="theme-toggle" onclick="toggleTheme()"><i class="fa fa-adjust i" ></i></button>
+	</header>
+	
+		<section class="balance">
+			<h2>Balance: <span id="balance">$0.00</span> <span><button id="hide_bal" onclick="blurText()"><i class="fa fa-eye-slash"></i></button></span></h2>
+			<button class="deposit" onclick="deposit()">Deposit</button>
+			<button class="withdraw" onclick="withdraw()">Withdraw</button>
+		</section>
+		<main>
+		<section class="quicklinks" >
+		<h2> Quick actions</h2>
+		 <div class="quickactions" >
+		<button class="circle-btn" ><p><i class="fa fa-paper-plane" ></i></p>Send</button>
+		 <button  class="circle-btn" ><p><i class="fa fa-arrow-down" ></i></p>Receive</button>
+		 <button  class="circle-btn" ><p><i class="fa fa-history" ></i></p>History</button>
+		 
+		</div>
+		 </section>
+		<section class="transactions">
+			<h2>Transactions</h2>
+			<ul id="transaction-list">
+				<!-- transactions will be listed here -->
+			</ul>
+			<button class="add-transaction" onclick="addTransaction()">Add Transaction</button>
+		</section>
+		
+		<pre>
+		
+		
+		
+		
+		</pre>
+		
+		<div class="bottom-nav">
+		<div class="bottom-nav__container">
+		<a href="#" class="bottom-nav__item bottom-nav__item-active">
+		<i class="fa fa-home"></i>
+		<p>Home</p>
+		</a>
+		<a href="#" class="bottom-nav__item">
+		<i class="fa fa-credit-card"></i>
+		<p>Payments</p>
+		</a>
+		<a href="#" class="bottom-nav__item">
+		<i class="fa fa-gear"></i>
+		<p>Settings</p>
+		</a>
+		</div>
+		</div>
+		
+	</main>
+	<script src="js/script.js"></script>
+</body>
+</html>
