@@ -1,2 +1,3 @@
 # neb-x
-a practical wallet dashboard by nebula
+A Practical wallet dashboard by Peters Joshua
+A frontend software
