@@ -81,12 +81,6 @@ body {
 		   padding: 8px;
 		 }
 		 
-		.quicklinks {
-		display: ;
-		flex-direction: ;
-		align-items: ;
-		padding: ;	
-		}
 		.quickactions {
 		display: flex;
 		flex-wrap: wrap;
@@ -108,7 +102,6 @@ body {
 		main {
 		display: flex;
 		flex-direction: column;
-		align-items: ;
 		padding: 2em;
 		}
 		
@@ -121,13 +114,10 @@ body {
 		border: 1px solid #ddd; /* added border */
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* added box shadow */
 		border: none;
-		cursor: pointer;
 		}
 		.circle-btn {
 		    border-radius: 5px;
 		    color: white;
-		    background-color: ;
-		   // height: 40px;
 		    width: 80px;
 		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		    padding: 2px;
@@ -247,3 +237,115 @@ body {
 	.no-theme-change {
 	  color: inherit;
 	}
+/* Payments Section */
+.payments {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 10px;
+}
+
+.payments h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.payment-form input,
+.payment-form select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.payment-form .submit-btn {
+    padding: 12px;
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-form .submit-btn:hover {
+    background-color: #4a9f9f;
+}
+
+/* Payment History */
+.payment-history {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 10px;
+}
+
+.payment-history h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.payment-history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.payment-history ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-history ul li:last-child {
+    border-bottom: none;
+}
+
+.payment-history ul li span {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Bottom Navigation */
+.bottom-nav__item {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.bottom-nav__item-active {
+    color: cadetblue;
+}
+
+.bottom-nav__item i {
+    font-size: 20px;
+}
+
+.bottom-nav__item p {
+    margin: 5px 0 0;
+    font-size: 12px;
+}
