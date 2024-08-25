@@ -1,120 +1,154 @@
-/* login page code */
-function btnAction() {
-	let username = document.querySelector("#username").value;
-	let password = document.querySelector("#password").value;
-console.log(username);	
-console.log(password);
+// Wallet Code
 
-};
-/* login code ends*/
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialize variables that are common across pages
+    let theme = localStorage.getItem('theme') || 'light'; // Load theme from localStorage or default to 'light'
 
+    // Retrieve balance and transactions from localStorage or set defaults
+    let balance = parseFloat(localStorage.getItem('balance')) || 1000.00; // Example starting balance
+    let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
- // wallet code begins
-let transactions = [
-		 { id: 1, amount: 100, type: 'income' },
-		 { id: 2, amount: 50, type: 'expense' },
-		 { id: 3, amount: 200, type: 'income' },
-		 ]; 
-		 // sample data
-		let balance = 0;
-		let theme = 'light';
+    // Apply the stored theme to the body
+    document.body.classList.toggle('dark-theme', theme === 'dark');
 
-		// update balance
-		balance = transactions.reduce((acc, cur) => {
-			if (cur.type === 'income') {
-				return acc + cur.amount;
-			} else {
-				return acc - cur.amount;
-			}
-		}, 0);
-		document.getElementById('balance').innerText = `$${balance.toFixed(2)}`;
+    // Function to save balance and transactions to localStorage
+    function saveData() {
+        localStorage.setItem('balance', balance.toFixed(2));
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+    }
 
-		// populate transaction list
-		transactions.forEach((transaction) => {
-			const transactionHTML = `
-				<li>
-					${transaction.type === 'income' ? '+' : '-'} $${transaction.amount}
-				</li>
-			`;
-			document.getElementById('transaction-list').innerHTML += transactionHTML;
-		});
+    // Function to update the displayed balance
+    function updateBalance() {
+        const balanceElement = document.getElementById('balance');
+        if (balanceElement) {
+            balanceElement.innerText = `$${balance.toFixed(2)}`;
+        }
+        saveData(); // Save data whenever balance is updated
+    }
 
-		// add transaction
-		function addTransaction(amount, type) {
-			const transactionHTML = `
-				<li>
-					${amount} <span>(${type})</span>
-				</li>
-			`;
-			document.getElementById('transaction-list').innerHTML += transactionHTML;
-		}
+    // Function to add a transaction
+    function addTransaction(amount, type, description, status) {
+        const transaction = {
+            id: transactions.length + 1,
+            amount: amount,
+            type: type,
+            description: description,
+            status: status,
+            date: new Date().toLocaleString()
+        };
+        transactions.push(transaction);
+        saveData(); // Save data whenever a transaction is added
+        updateTransactionHistory(); // Update the transaction history immediately
+    }
 
-		// deposit
-		function deposit() {
-			const amount = prompt('Enter deposit amount:');
-			if (amount) {
-				balance += parseFloat(amount);
-				document.getElementById('balance').innerText = `$${balance.toFixed(2)}`;
-				addTransaction(`+ $${amount}`, 'credited');
-				animateBalanceUpdate();
-			}
-		}
+    // Function to populate the payment history
+    function updateTransactionHistory() {
+        const paymentHistory = document.getElementById('payment-history');
+        const transactionList = document.getElementById('transaction-list');
 
-		// withdraw
-		function withdraw() {
-			const amount = prompt('Enter withdrawal amount:');
-			if (amount) {
-				balance -= parseFloat(amount);
-				document.getElementById('balance').innerText = `$${balance.toFixed(2)}`;
-				addTransaction(`- $${amount}`, 'debited');
-				animateBalanceUpdate();
-			}
-		}
+        if (paymentHistory) {
+            paymentHistory.innerHTML = ''; // Clear current list
 
-		// toggle theme
-		function toggleTheme() {
-			if (theme === 'light') {
-				document.body.classList.add('dark-theme');
-				theme = 'dark';
-			} else {
-				document.body.classList.remove('dark-theme');
-				theme = 'light';
-			}
-			// update styles for other elements
-		}
-		function blur() {
-		   document.querySelector("#balance").innerText = "****"
-		};
+            transactions.filter(t => t.type === 'expense').forEach((transaction) => {
+                const transactionHTML = `
+                    <li>
+                        ${transaction.date} - $${transaction.amount.toFixed(2)} (${transaction.description}) - ${transaction.status}
+                    </li>
+                `;
+                paymentHistory.innerHTML += transactionHTML;
+            });
+        }
 
-		// animate balance update
-		function animateBalanceUpdate() {
-			const balanceElement = document.getElementById('balance');
-			balanceElement.classList.add('animate');
-			setTimeout(() => {
-				balanceElement.classList.remove('animate');
-			}, 1000);
-		}
-		function openNav() {
-		document.getElementById("mySidenav").style.width = "250px";
-		};
-		
-		function closeNav() {
-		document.getElementById("mySidenav").style.width = "0";
-		};
-		
-		let availableBalance = document.querySelector("#balance");
-		let isHidden = false;
-		
-	  function hideBal() {
-	    if(!isHidden){
-	     	availableBalance.style.filter = "blur(5px)";
-	    	isHidden = true;
-	    }
-	    else{
-	     	availableBalance.style.filter = "none";
-	    	isHidden = false;
-	    }
-	    
-	  };
-		
-		// wallet code ends
+        if (transactionList) {
+            transactionList.innerHTML = ''; // Clear current list
+
+            transactions.forEach((transaction) => {
+                const transactionHTML = `<li>${transaction.type === 'income' ? '+' : '-'} $${transaction.amount.toFixed(2)}</li>`;
+                transactionList.innerHTML += transactionHTML;
+            });
+        }
+    }
+
+    // Wallet Page Specific Code
+    if (document.querySelector('.wallet-page')) {
+        updateBalance(); // Initial update of balance
+        updateTransactionHistory(); // Initial population of transaction history
+
+        document.querySelector('.deposit').addEventListener('click', function() {
+            const amount = parseFloat(prompt('Enter deposit amount:'));
+            if (amount) {
+                balance += amount;
+                updateBalance();
+                addTransaction(amount, 'income', 'Deposit', 'completed');
+            }
+        });
+
+        document.querySelector('.withdraw').addEventListener('click', function() {
+            const amount = parseFloat(prompt('Enter withdrawal amount:'));
+            if (amount && balance >= amount) {
+                balance -= amount;
+                updateBalance();
+                addTransaction(amount, 'expense', 'Withdrawal', 'completed');
+            } else if (amount > balance) {
+                alert('Insufficient funds');
+            }
+        });
+    }
+
+    // Payments Page Specific Code
+    if (document.querySelector('.payments-page')) {
+        updateBalance(); // Update the balance when the Payments page loads
+        updateTransactionHistory(); // Initial population of transaction history
+
+        document.querySelectorAll('.pay-bill-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const billType = this.dataset.billType;
+                const amount = parseFloat(prompt(`Enter the amount for ${billType}:`));
+                if (amount) {
+                    makePayment(amount, billType);
+                }
+            });
+        });
+
+        document.querySelectorAll('.send-money-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const friendName = prompt("Enter the friend's name:");
+                const amount = parseFloat(prompt(`Enter the amount to send to ${friendName}:`));
+                if (friendName && amount) {
+                    sendMoney(amount, friendName);
+                }
+            });
+        });
+    }
+
+    // Make Payment Function
+    function makePayment(amount, billType) {
+        if (balance < amount) {
+            alert('Insufficient funds');
+            addTransaction(amount, 'expense', billType, 'failed');
+        } else {
+            balance -= amount;
+            updateBalance();
+            addTransaction(amount, 'expense', billType, 'completed');
+        }
+    }
+
+    // Send Money Function
+    function sendMoney(amount, friendName) {
+        if (balance < amount) {
+            alert('Insufficient funds');
+            addTransaction(amount, 'expense', `Send to ${friendName}`, 'failed');
+        } else {
+            balance -= amount;
+            updateBalance();
+            addTransaction(amount, 'expense', `Send to ${friendName}`, 'completed');
+        }
+    }
+
+    // Common Theme Toggle Functionality
+    document.querySelector('.theme-toggle')?.addEventListener('click', function() {
+        theme = theme === 'light' ? 'dark' : 'light';
+        document.body.classList.toggle('dark-theme', theme === 'dark');
+        localStorage.setItem('theme', theme); // Save the current theme to localStorage
+    });
+});

@@ -5,21 +5,30 @@
     <title>Page title</title>
     <style>
    body{
-  background: white;
+  background: #fff;
   color: black;
   margin: 0;
   min-height: 100vh;
-}
+} 
+
   header {
   padding: 10px;
-  
-  
   }
-img {
+  
+  h2 {  
+    color: #000;
+    text-decoration: underline;
+    text-decoration-color: cadetblue;
+    
+    
+  }
+  
+  img {
 	border-radius: 50%;
 	height: 200px;
 	width: 200px;
 }
+
    section {
    flex: 100px;
    color: #000;
@@ -27,6 +36,7 @@ img {
    padding: 10px;
    margin: 10px;
 }
+
    input {
    border: none;
    border-bottom: 2px solid cadetblue;
@@ -36,15 +46,18 @@ img {
    width: 300px;
    transition: width .6s;
    }
+   
    input:hover {
    outline: none;
    border-bottom: 3px solid cadetblue;
    padding: 10px;
    
    }
+   
    span {
-   font-size: 50px;
+     font-size: 10px;
    }
+   
    button {
    border: 1px solid cadetblue;
    outline: none;
@@ -55,6 +68,7 @@ img {
    color: white;
    transition: all 0.5s;
    }
+   
    button:hover {
    border: 2px solid cadetblue;
    outline: none;
@@ -63,6 +77,7 @@ img {
    background: white;
    color: cadetblue;
    }
+   
    a {
    text-decoration: none;
    color: cadetblue;
@@ -73,17 +88,25 @@ img {
 <body>
     <section>
 <center>
-<img src="img/avatar.jpg"  />
+<h2>Sign up to Neb-x</h2>
+<pre>
+  
+  
+</pre>
+<form onsubmit="signUp(); return false;">
+  <p><input type="email"  placeholder="Email" id="email" required/> </p>
 <p><input type="text"  placeholder="Username" id="username" required/> </p>
 <p><input type="password" placeholder="Password"  id="password"  required/></p>
-<p> </p>
-<button onclick="btnAction()"> <a href="Wallet.html"> Login </a></button>
+<p><input type="password" placeholder="Re-enter Password"  id="re-password"  requir</p>
+<p><span class="errortext"> </span></p>
+<button type="submit"> Sign up</button>
+
+
+</form>
 </center>
 <p> </p>
-<a href="index.html" onclick=""> Forgot password </a>
 <center>
-<h5> Don't have an account? <a href="#" >sign up </a></h5>
 </section>
-<script src="js/script.js" ></script>
+<script src="js/signIn.js" ></script>
 </body>
 </html>
