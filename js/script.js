@@ -2,6 +2,9 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     // Initialize variables that are common across pages
+    document.querySelector("#userName").innerHTML = JSON.parse(localStorage.getItem('user')).username;
+     document.querySelector("#email").innerHTML = JSON.parse(localStorage.getItem('user')).email;
+
     let theme = localStorage.getItem('theme') || 'light'; // Load theme from localStorage or default to 'light'
 
     // Retrieve balance and transactions from localStorage or set defaults
@@ -51,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             transactions.filter(t => t.type === 'expense').forEach((transaction) => {
                 const transactionHTML = `
-                    <li>
-                        ${transaction.date} - $${transaction.amount.toFixed(2)} (${transaction.description}) - ${transaction.status}
+                    <li style="border-bottom: 2px solid #4CAF50;">
+                      ~  ${transaction.date} - $${transaction.amount.toFixed(2)} (${transaction.description}) - ${transaction.status}
                     </li>
                 `;
                 paymentHistory.innerHTML += transactionHTML;
@@ -152,3 +155,77 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('theme', theme); // Save the current theme to localStorage
     });
 });
+
+
+// Profile Settings Functions
+function updatePassword() {
+    const newPassword = document.getElementById('password').value;
+    if (newPassword) {
+        alert('Password updated successfully!');
+    } else {
+        alert('Please enter a new password.');
+    }
+}
+
+// Appearance Settings Functions
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+    const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme); // Save theme preference in localStorage
+}
+
+function updateFontSize(size) {
+    document.body.style.fontSize = `${size}px`;
+    localStorage.setItem('fontSize', size); // Save font size preference in localStorage
+}
+
+// Account Management Functions
+function deleteAccount() {
+    if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+        alert('Account deleted successfully.');
+    }
+}
+
+function logout() {
+    alert('You have been logged out.');
+    // Redirect to login page or clear session
+    window.location.href = 'login.html';
+}
+
+// Section Toggle Function
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+}
+
+// Initialize Settings Page with Saved Preferences
+window.onload = function() {
+    // Apply saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-theme');
+        }
+    }
+
+    // Apply saved font size
+    const savedFontSize = localStorage.getItem('fontSize');
+    if (savedFontSize) {
+        document.body.style.fontSize = `${savedFontSize}px`;
+    }
+
+    // Initialize all sections as hidden
+    const sections = document.querySelectorAll('.section-content');
+    sections.forEach(section => section.style.display = 'none');
+};
+
+// Sidenav Functions
+function openNav() {
+    document.getElementById('mySidenav').style.width = '250px';
+}
+
+function closeNav() {
+    document.getElementById('mySidenav').style.width = '0';
+}

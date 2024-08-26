@@ -6,13 +6,16 @@
 	<title>Wallet Dashboard</title>
 	<script src="js/jquery-3.7.1.min.js" ></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet" href="css/wallet.css">
 </head>
 
 <body class="wallet-page">
 	<header>
 	
- <a class="open-nav" onclick="openNav()"><i class="fa fa-user-circle-o"></i></a>
+ <a class="open-nav" onclick="openNav()"><span class="material-symbols-outlined">
+   account_circle
+ </span></a>
 	 <div id="mySidenav" class="sidenav">
 	 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>	 
 		 <nav> 
@@ -21,7 +24,7 @@
 	 				<a href="#" >Contact</a>
 	 	</nav>
 	</div>
-	<p style="text-align: left; margin-left: 5px;p" >Welcome back, <span id="userName"> </span></p>
+	<p style="text-align: left; margin-left: 5px;p" >Welcome, <span id="userName"> </span></p>
 		<button class="theme-toggle" onclick="toggleTheme()"><i class="fa fa-adjust i" ></i></button>
 	</header>
 	
@@ -35,8 +38,8 @@
 		<h2> Quick actions</h2>
 		 <div class="quickactions" >
 		<button class="circle-btn" ><p><i class="fa fa-paper-plane" ></i></p>Send</button>
-		 <button  class="circle-btn" ><p><i class="fa fa-arrow-down" ></i></p>Receive</button>
-		 <button  class="circle-btn" ><p><i class="fa fa-history" ></i></p>History</button>
+		 <button  class="circle-btn" ><p><span class="material-symbols-outlined">arrow_downward</span></p></p>Receive</button>
+		 <button  class="circle-btn" ><p><span class="material-symbols-outlined">history</span></p>History</button>
 		 
 		</div>
 		 </section>
@@ -47,8 +50,7 @@
 			</ul>
 			<button class="add-transaction" onclick="addTransaction()">Add Transaction</button>
 		</section>
-		
-		<button id="logoutBtn">log out</button>
+		<p  id="email" style="display: none;"></p>
 		<pre>
 		
 		
@@ -59,15 +61,20 @@
 		<div class="bottom-nav">
 		<div class="bottom-nav__container">
 		<a href="#" class="bottom-nav__item bottom-nav__item-active">
-		<i class="fa fa-home"></i>
+		<i  class="material-symbols-outlined">
+		 account_balance_wallet</i>
 		<p>Home</p>
 		</a>
 		<a href="payments.html" class="bottom-nav__item">
-		<i class="fa fa-credit-card"></i>
+		<span class="material-symbols-outlined">
+		  wallet
+		</span>
 		<p>Payments</p>
 		</a>
-		<a href="#" class="bottom-nav__item">
-		<i class="fa fa-gear"></i>
+		<a href="settings.html" class="bottom-nav__item">
+		<span class="material-symbols-outlined">
+		  settings
+		</span>
 		<p>Settings</p>
 		</a>
 		</div>

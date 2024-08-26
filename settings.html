@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+  
+    <link rel="stylesheet" href="css/settings.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <header>
+        <h1>Settings</h1>
+      <p>:-)</p>
+    </header>
+    
+
+    <main>
+        <!-- Customer Info Section -->
+        <section class="settings-section" id="customer-info-section">
+            <h2 class="section-header" onclick="toggleSection('customer-info')">Customer Info</h2>
+            <div class="section-content" id="customer-info">
+                <p><strong>Username:</strong> <span id="userName">user</span></span></p>
+                <p><strong>Email:</strong> <span id="email">user@example.com</span></p>
+            </div>
+        </section>
+
+        <!-- Profile Settings Section -->
+        <section class="settings-section" id="profile-settings-section">
+            <h2 class="section-header" onclick="toggleSection('profile-settings')">Profile Settings</h2>
+            <div class="section-content" id="profile-settings">
+                <div class="settings-item">
+                    <label for="password">Change Password:</label>
+                    <input type="password" id="password" placeholder="Enter new password">
+                    <button onclick="updatePassword()">Update Password</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appearance Settings Section -->
+        <section class="settings-section" id="appearance-settings-section">
+            <h2 class="section-header" onclick="toggleSection('appearance-settings')">Appearance Settings</h2>
+            <div class="section-content" id="appearance-settings">
+                <div class="settings-item">
+                    <label for="theme-toggle">Theme:</label>
+                    <button id="theme-toggle" onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+                </div>
+                <div class="settings-item">
+                    <label for="font-size">Font Size:</label>
+                    <input type="range" id="font-size" min="12" max="24" value="16" onchange="updateFontSize(this.value)">
+                </div>
+            </div>
+        </section>
+
+        <!-- Account Management Section -->
+        <section class="settings-section" id="account-management-section">
+            <h2 class="section-header" onclick="toggleSection('account-management')">Account Management</h2>
+            <div class="section-content" id="account-management">
+              <button onclick="logout()">Logout</button>
+                <button onclick="deleteAccount()" style="background: red;">Delete Account</button>
+                
+            </div>
+        </section>
+
+        <!-- Application Info Section -->
+        <section class="settings-section" id="app-info-section">
+            <h2 class="section-header" onclick="toggleSection('app-info')">Application Info</h2>
+            <div class="section-content" id="app-info">
+                <div class="settings-item">
+                    <h3>About</h3>
+                    <p>This app is version 1.0. Designed to manage your payments and transactions efficiently.</p>
+                </div>
+                <div class="settings-item">
+                    <h3>Licenses</h3>
+                    <p>This application uses open-source libraries. For more details, visit our licenses page.</p>
+                </div>
+            </div>
+        </section>
+        <pre> 
+        
+        
+        
+        
+        
+        </pre>
+    </main>
+
+
+        <nav class="bottom-nav">
+            <div class="bottom-nav__container">
+                <a href="wallet.html" class="bottom-nav__item">
+                    <i  class="material-symbols-outlined">
+		 account_balance_wallet</i>
+                    <p>Home</p>
+                </a>
+                <a href="payments.html" class="bottom-nav__item">
+                    <span class="material-symbols-outlined">wallet</span>
+                    <p>Payments</p>
+                </a>
+                <a href="settings.html" class="bottom-nav__item bottom-nav__item-active">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p>Settings</p>
+                </a>
+            </div>
+        </nav>
+    
+    <script src="js/script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
