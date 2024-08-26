@@ -2,111 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up to Neb-x</title>
     <style>
-   body{
-  background: #fff;
-  color: black;
-  margin: 0;
-  min-height: 100vh;
-} 
-
-  header {
-  padding: 10px;
-  }
-  
-  h2 {  
-    color: #000;
-    text-decoration: underline;
-    text-decoration-color: cadetblue;
-    
-    
-  }
-  
-  img {
-	border-radius: 50%;
-	height: 200px;
-	width: 200px;
+      
+      /* General Styles */
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease;
 }
 
-   section {
-   flex: 100px;
-   color: #000;
-   text-align: center;
-   padding: 10px;
-   margin: 10px;
+/* Sign-up Section */
+.signup-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
 }
 
-   input {
-   border: none;
-   border-bottom: 2px solid cadetblue;
-   padding: 10px;
-   outline: none;
-   color: ;
-   width: 300px;
-   transition: width .6s;
-   }
-   
-   input:hover {
-   outline: none;
-   border-bottom: 3px solid cadetblue;
-   padding: 10px;
-   
-   }
-   
-   span {
-     font-size: 10px;
-   }
-   
-   button {
-   border: 1px solid cadetblue;
-   outline: none;
-   padding: 10px;
-   border-radius: 5px;
-   width: 320px;
-   background: cadetblue;
-   color: white;
-   transition: all 0.5s;
-   }
-   
-   button:hover {
-   border: 2px solid cadetblue;
-   outline: none;
-   padding: 10px;
-   border-radius: 5px;
-   background: white;
-   color: cadetblue;
-   }
-   
-   a {
-   text-decoration: none;
-   color: cadetblue;
-   }
-        
+.signup-container h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+/* Sign-up Button */
+.signup-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+/* Error Text */
+.errortext {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .signup-section {
+        padding: 20px;
+    }
+
+    .signup-container h2 {
+        font-size: 24px;
+    }
+
+    .signup-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+      
+      
     </style>
 </head>
 <body>
-    <section>
-<center>
-<h2>Sign up to Neb-x</h2>
-<pre>
-  
-  
-</pre>
-<form onsubmit="signUp(); return false;">
-  <p><input type="email"  placeholder="Email" id="email" required/> </p>
-<p><input type="text"  placeholder="Username" id="username" required/> </p>
-<p><input type="password" placeholder="Password"  id="password"  required/></p>
-<p><input type="password" placeholder="Re-enter Password"  id="re-password"  requir</p>
-<p><span class="errortext"> </span></p>
-<button type="submit"> Sign up</button>
-
-
-</form>
-</center>
-<p> </p>
-<center>
-</section>
-<script src="js/signIn.js" ></script>
+    <section class="signup-section">
+        <div class="signup-container">
+            <h2>Sign up to Neb-x</h2>
+            <form onsubmit="signUp(); return false;">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" id="email" required/>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Username" id="username" required/>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" id="password" required/>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Re-enter Password" id="re-password" required/>
+                </div>
+                <p><span class="errortext"></span></p>
+                <button type="submit" class="signup-btn">Sign up</button>
+            </form>
+        </div>
+    </section>
+    <script src="js/signIn.js"></script>
 </body>
 </html>

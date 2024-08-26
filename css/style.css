@@ -1,4 +1,6 @@
- *{
+/* 
+  CURRENTLY NOT IN USE!!!
+*{
      box-sizing: border-box;
  }
   body {
@@ -61,14 +63,14 @@
       footer {
          color: #fff;
          background: #333;
-         position: relative; /* required to position the copyright at the bottom */
+         position: relative; /* required to position the copyright at the bottom 
          font-size: 80%;
       }
       .footer-copyright {
          width: 100%;
          height: 40px;
          background: #111;
-         /* positions the copyright at the bottom of the footer */
+         /* positions the copyright at the bottom of the footer 
          padding: 10px;
          position: absolute;
          bottom: 0px;
@@ -77,24 +79,24 @@
       .footer-body {
          margin-bottom: 40px;
       }
-      /* the clearfix hack */
+      /* the clearfix hack
       .footer-body::after {
          content: "";
          display: block;
          clear: both;
       }
-      /* float the divs */
+      /* float the divs 
       .footer-body > div {
          float: left;
          padding: 20px;
       }
-      /* sets the width of the first column */
+      /* sets the width of the first column 
       .footer-body > div:first-child {
          font-size: 150%;
          width: 35%;
          text-align: center;
       }
-      /* sets the width of the second column */
+      /* sets the width of the second column
       .footer-body > div:last-child {
          width: 65%;
       } .footer-body ul {
@@ -108,5 +110,4 @@
          text-decoration: none;
          margin-bottom: 7px;
       }
-   </style>
-</head>
+   */
