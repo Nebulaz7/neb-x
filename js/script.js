@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('balance', balance.toFixed(2));
         localStorage.setItem('transactions', JSON.stringify(transactions));
     }
-
+  
     // Function to update the displayed balance
     function updateBalance() {
         const balanceElement = document.getElementById('balance');
@@ -183,6 +183,8 @@ function updateFontSize(size) {
 function deleteAccount() {
     if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
         alert('Account deleted successfully.');
+        localStorage.clear();
+        window.location.href = 'index.html';
     }
 }
 
@@ -220,12 +222,3 @@ window.onload = function() {
     const sections = document.querySelectorAll('.section-content');
     sections.forEach(section => section.style.display = 'none');
 };
-
-// Sidenav Functions
-function openNav() {
-    document.getElementById('mySidenav').style.width = '250px';
-}
-
-function closeNav() {
-    document.getElementById('mySidenav').style.width = '0';
-}

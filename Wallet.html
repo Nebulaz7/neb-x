@@ -37,18 +37,17 @@
 		<section class="quicklinks" >
 		<h2> Quick actions</h2>
 		 <div class="quickactions" >
-		<button class="circle-btn" ><p><i class="fa fa-paper-plane" ></i></p>Send</button>
+		<button class="circle-btn send-money-btn" ><p><i class="fa fa-paper-plane" ></i></p>Send</button>
 		 <button  class="circle-btn" ><p><span class="material-symbols-outlined">arrow_downward</span></p></p>Receive</button>
 		 <button  class="circle-btn" ><p><span class="material-symbols-outlined">history</span></p>History</button>
 		 
 		</div>
 		 </section>
 		<section class="transactions">
-			<h2>Transactions</h2>
+			<h2>Transactions History</h2>
 			<ul id="transaction-list">
 				<!-- transactions will be listed here -->
 			</ul>
-			<button class="add-transaction" onclick="addTransaction()">Add Transaction</button>
 		</section>
 		<p  id="email" style="display: none;"></p>
 		<pre>
@@ -80,6 +79,24 @@
 		</div>
 		</div>
 	</main>
+	<script>
+	  let availableBalance = document.querySelector("#balance");
+
+// Define a variable to track whether the balance is hidden
+let isHidden = false;
+
+function blurText() {
+    // Toggle the blur effect based on the isHidden flag
+    if (!isHidden) {
+        availableBalance.style.filter = "blur(15px)";
+        isHidden = true;
+    } else {
+        availableBalance.style.filter = "none";
+        isHidden = false;
+    }
+}
+
+	</script>
 	<script src="js/script.js"></script>
 </body>
 </html>

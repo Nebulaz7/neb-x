@@ -4,357 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neb-X: Your All-In-One Digital Wallet Solution</title>
+    <title>Neb-X: Your Ultimate Digital Wallet Solution</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Neb-X: The Future of Digital Wallets">
+    <meta property="og:description" content="Experience seamless transactions with Neb-X. Your reliable digital wallet for sending, receiving, and managing money with ease.">
+    <meta property="og:image" content="https://yourwebsite.com/logo.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Neb-X">
+    
+    <!-- Twitter Card Meta Tags (Optional) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Neb-X: The Future of Digital Wallets">
+    <meta name="twitter:description" content="Experience seamless transactions with Neb-X. Your reliable digital wallet for sending, receiving, and managing money with ease.">
+    <meta name="twitter:image" content="https://yourwebsite.com/path-to-image.png">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f0f2f5;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(to right, #0072ff, #00c6ff);
-            color: #fff;
-            height: 70vh;
-            position: relative;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease-in-out;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        header .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        header .cta-buttons a,
-        header .cta-buttons button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        header .cta-buttons a:hover,
-        header .cta-buttons button:hover {
-            background-color: #45a049;
-        }
-
-        header .cta-buttons .learnMore {
-            background-color: #333;
-        }
-
-        section {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff;
-            color: #333;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #4CAF50;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        section p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-
-        section .feature {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            margin-bottom: 50px;
-        }
-
-        section .feature .icon {
-            font-size: 4rem;
-            color: #0072ff;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        section .feature:hover .icon {
-            transform: scale(1.2);
-        }
-
-        section .feature-item {
-            width: 45%;
-            margin-bottom: 20px;
-            animation: fadeInLeft 1.2s ease-in-out;
-            text-align: left;
-            max-width: 400px;
-            margin: 0 auto 20px;
-        }
-
-        section .feature-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        section .feature-item p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        section.testimonials {
-            background: #f0f2f5;
-            padding: 60px 20px;
-        }
-
-        .testimonials h2 {
-            color: #0072ff;
-            margin-bottom: 40px;
-        }
-
-        .testimonial-item {
-            max-width: 600px;
-            margin: 0 auto;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            position: relative;
-        }
-
-        .testimonial-item p {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-item::before {
-            content: "“";
-            font-size: 50px;
-            color: #0072ff;
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            line-height: 0;
-        }
-
-        .testimonial-item::after {
-            content: "”";
-            font-size: 50px;
-            color: #0072ff;
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
-            line-height: 0;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #333;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer .footer-body {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        footer .footer-body ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        footer .footer-body ul li {
-            margin-bottom: 10px;
-        }
-
-        footer .footer-body ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer .footer-body ul li a:hover {
-            color: #4CAF50;
-        }
-
-        footer .footer-copyright {
-            font-size: 14px;
-            color: #bbb;
-          
-            
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            section .feature-item {
-                width: 100%;
-            }
-
-            header .cta-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            section p {
-                font-size: 1rem;
-            }
-
-            section .feature-item h3 {
-                font-size: 1.3rem;
-            }
-
-            section .feature-item p {
-                font-size: 0.9rem;
-            }
-
-            section .feature {
-                flex-direction: column;
-            }
-
-            .testimonial-item {
-                padding: 20px;
-            }
-
-            .testimonials h2 {
-                font-size: 2rem;
-            }
-
-            .testimonial-item p {
-                font-size: 1rem;
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
         <h1>Welcome to Neb-X</h1>
-        <p>Your all-in-one digital wallet solution for seamless financial management.</p>
+        <p>Your Ultimate Digital Wallet Solution</p>
         <div class="cta-buttons">
-            <a class="start" href="signup.html">Get Started</a>
-            <button class="learnMore" onclick="scrollToFeatures()">Learn More</button>
+            <a href="signup.html">Get Started</a>
+            <button class="learnMore" onclick="scrollToSection('features')">Learn More</button>
         </div>
     </header>
 
-    <section id="features">
+    <section id="features" class="features-section">
         <h2>Features</h2>
+        <p>Experience the cutting-edge features that make Neb-X the most reliable, secure, and user-friendly digital wallet.</p>
         <div class="feature">
             <div class="feature-item">
-                <span class="material-icons icon">account_balance_wallet</span>
-                <h3>Effortless Balance Management</h3>
-                <p>Keep track of your finances with real-time balance updates and instant transaction logging.</p>
+                <span class="material-icons icon">lock</span>
+                <h3>Advanced Security</h3>
+                <p>Rest assured with multi-layered security that keeps your funds and data safe.</p>
             </div>
             <div class="feature-item">
                 <span class="material-icons icon">history</span>
-                <h3>Comprehensive Transaction History</h3>
-                <p>View and manage your transaction history with ease, keeping your finances organized.</p>
+                <h3>Transaction History</h3>
+                <p>Easily track and manage your transactions with a detailed and searchable history.</p>
             </div>
-        </div>
-
-        <div class="feature">
             <div class="feature-item">
-                <span class="material-icons icon">payments</span>
-                <h3>Advanced Payment Capabilities</h3>
-                <p>Pay bills and send money effortlessly with our streamlined payment options.</p>
+                <span class="material-icons icon">autorenew</span>
+                <h3>Real-time Balance</h3>
+                <p>Keep tabs on your finances with instant updates to your balance after every transaction.</p>
             </div>
             <div class="feature-item">
                 <span class="material-icons icon">brush</span>
-                <h3>Personalized User Experience</h3>
-                <p>Customize your wallet with light and dark modes and tailor settings to suit your needs.</p>
+                <h3>Personalized Experience</h3>
+                <p>Tailor your wallet to fit your style with customizable themes and settings.</p>
             </div>
         </div>
     </section>
@@ -362,16 +68,32 @@
     <section class="testimonials">
         <h2>What Our Users Are Saying</h2>
         <div class="testimonial-item">
-            <p>"Neb-X has revolutionized the way I manage my finances. The seamless transaction history feature is a game-changer!"</p>
+            <p>"Neb-X has revolutionized how I handle my finances. The user-friendly interface and reliable features make it a must-have."</p>
             <div class="testimonial-author">- Okunlade Alexander</div>
         </div>
         <div class="testimonial-item">
-            <p>"I love how easy it is to keep track of my balance in real-time. Neb-X is hands down the best digital wallet out there."</p>
-            <div class="testimonial-author">- Igbinidu Richie</div>
+            <p>"I love the real-time updates and the security features. Neb-X is the best digital wallet I've ever used!"</p>
+            <div class="testimonial-author">- Igbnidu Richie</div>
         </div>
         <div class="testimonial-item">
-            <p>"With Neb-X, paying bills and transferring money has never been so effortless. Highly recommend!"</p>
+            <p>"Neb-X makes managing my finances so easy. The transaction history feature is a life-saver!"</p>
             <div class="testimonial-author">- Joshua Adesanya</div>
+        </div>
+    </section>
+
+    <section class="additional-content">
+        <h2>Why Choose Neb-X?</h2>
+        <div class="additional-content-item">
+            <h3>Fast and Secure Transactions</h3>
+            <p>Experience lightning-fast transactions with unparalleled security, making your financial management seamless and worry-free.</p>
+        </div>
+        <div class="additional-content-item">
+            <h3>24/7 Customer Support</h3>
+            <p>Our dedicated support team is available around the clock to assist you with any issues or queries, ensuring a smooth experience every time.</p>
+        </div>
+        <div class="additional-content-item">
+            <h3>Intuitive User Interface</h3>
+            <p>Neb-X is designed with simplicity in mind, offering an intuitive interface that makes managing your finances effortless.</p>
         </div>
     </section>
 
@@ -379,27 +101,48 @@
         <div class="footer-body">
             <div>
                 <p>Experience the future of digital wallets with Neb-X. Secure, efficient, and always at your fingertips.</p>
-              
                 <ul>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                 </ul>
-                <hr />
             </div>
         </div>
+        <hr />
         <div class="footer-copyright">
             &copy; 2024 Nebula Inc.
         </div>
     </footer>
 
     <script>
-        function scrollToFeatures() {
-            document.getElementById('features').scrollIntoView({
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
                 behavior: 'smooth'
             });
         }
+
+        // Scroll-in effect function
+        function addScrollEffect() {
+            const sections = document.querySelectorAll('section');
+
+            sections.forEach(section => {
+                section.classList.add('scroll-in');
+            });
+
+            window.addEventListener('scroll', () => {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        section.style.animation = 'slideInLeft 1.2s ease-in-out forwards';
+                    } else {
+                        section.style.animation = 'none';
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', addScrollEffect);
     </script>
 </body>
 
