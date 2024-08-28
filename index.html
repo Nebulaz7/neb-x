@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neb-X: Your Ultimate Digital Wallet Solution </title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Neb-X: The Future of Digital Wallets">
+    <meta property="og:description" content="Experience seamless transactions with Neb-X. Your reliable digital wallet for sending, receiving, and managing money with ease.">
+    <meta property="og:image" content="https://yourwebsite.com/logo.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Neb-X">
+    
+    <!-- Twitter Card Meta Tags (Optional) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Neb-X: The Future of Digital Wallets">
+    <meta name="twitter:description" content="Experience seamless transactions with Neb-X. Your reliable digital wallet for sending, receiving, and managing money with ease.">
+    <meta name="twitter:image" content="https://yurwebsite.com/path-to-image.png">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Neb-X</h1>
+        <p>Your Ultimate Digital Wallet Solution</p>
+        <div class="cta-buttons">
+            <a href="signup.html">Get Started</a>
+            <button class="learnMore" onclick="scrollToSection('features')">Learn More</button>
+        </div>
+    </header>
+
+    <section id="features" class="features-section">
+        <h2>Features</h2>
+        <p>Experience the cutting-edge features that make Neb-X the most reliable, secure, and user-friendly digital wallet.</p>
+        <div class="feature">
+            <div class="feature-item">
+                <span class="material-icons icon">lock</span>
+                <h3>Advanced Security</h3>
+                <p>Rest assured with multi-layered security that keeps your funds and data safe.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-icons icon">history</span>
+                <h3>Transaction History</h3>
+                <p>Easily track and manage your transactions with a detailed and searchable history.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-icons icon">autorenew</span>
+                <h3>Real-time Balance</h3>
+                <p>Keep tabs on your finances with instant updates to your balance after every transaction.</p>
+            </div>
+            <div class="feature-item">
+                <span class="material-icons icon">brush</span>
+                <h3>Personalized Experience</h3>
+                <p>Tailor your wallet to fit your style with customizable themes and settings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Users Are Saying</h2>
+        <div class="testimonial-item">
+            <p>"Neb-X has revolutionized how I handle my finances. The user-friendly interface and reliable features make it a must-have."</p>
+            <div class="testimonial-author">- Okunlade Alexander</div>
+        </div>
+        <div class="testimonial-item">
+            <p>"I love the real-time updates and the security features. Neb-X is the best digital wallet I've ever used!"</p>
+            <div class="testimonial-author">- Igbnidu Richie</div>
+        </div>
+        <div class="testimonial-item">
+            <p>"Neb-X makes managing my finances so easy. The transaction history feature is a life-saver!"</p>
+            <div class="testimonial-author">- Joshua Adesanya</div>
+        </div>
+    </section>
+
+    <section class="additional-content">
+        <h2>Why Choose Neb-X?</h2>
+        <div class="additional-content-item">
+            <h3>Fast and Secure Transactions</h3>
+            <p>Experience lightning-fast transactions with unparalleled security, making your financial management seamless and worry-free.</p>
+        </div>
+        <div class="additional-content-item">
+            <h3>24/7 Customer Support</h3>
+            <p>Our dedicated support team is available around the clock to assist you with any issues or queries, ensuring a smooth experience every time.</p>
+        </div>
+        <div class="additional-content-item">
+            <h3>Intuitive User Interface</h3>
+            <p>Neb-X is designed with simplicity in mind, offering an intuitive interface that makes managing your finances effortless.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-body">
+            <div>
+                <p>Experience the future of digital wallets with Neb-X. Secure, efficient, and always at your fingertips.</p>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <div class="footer-copyright">
+            &copy; 2024 Nebula Inc.
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Scroll-in effect function
+        function addScrollEffect() {
+            const sections = document.querySelectorAll('section');
+
+            sections.forEach(section => {
+                section.classList.add('scroll-in');
+            });
+
+            window.addEventListener('scroll', () => {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        section.style.animation = 'slideInLeft 1.2s ease-in-out forwards';
+                    } else {
+                        section.style.animation = 'none';
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', addScrollEffect);
+    </script>
+</body>
+
+</html>

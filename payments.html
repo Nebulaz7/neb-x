@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <link rel="stylesheet" href="css/wallet.css"> <!-- Link to your CSS file -->
+</head>
+<body  class="payments-page">
+    <header>
+      <button class="theme-toggle" onclick="toggleTheme()"><i class="fa fa-adjust i" ></i></button>
+        <h1>Payments & Transfers</h1>
+        
+        <p style="text-align: left; margin-left: 5px;p" >Welcome, <span id="userName"> </span></p>
+    </header>
+
+    <main>
+        <!-- Bill Payment Section -->
+        <section class="pay-bills">
+            <h2>Pay Bills</h2>
+            <div class="bill-buttons">
+                <button class="pay-bill-btn" data-bill-type="Educational Bill">
+                    <i class="fa fa-graduation-cap"></i> Pay Educational Bill
+                </button>
+                <button class="pay-bill-btn" data-bill-type="Water Bill">
+                    <i class="fa fa-tint"></i> Pay Water Bill
+                </button>
+                <button class="pay-bill-btn" data-bill-type="Netflix Bill">
+                    <i class="fa fa-film"></i> Pay Netflix Bill
+                </button>
+                <!-- Add more bills as needed -->
+            </div>
+        </section>
+
+        <!-- Send Money Section -->
+        <section class="send-money">
+            <h2>Send Money</h2>
+            <button class="send-money-btn">
+                <i class="fa fa-paper-plane"></i> Send Money to a Friend
+            </button>
+        </section>
+
+        <!-- Paymnt History Section -->
+        <section class="payment-history" style="background: cadetblue; color: white;">
+            <h2 style="color: white;">Payment History</h2>
+            <ul id="payment-history">
+                <!-- Payment history will be populated here -->
+            </ul>
+        </section>
+        <p  id="email" style="display: none;"></p>
+        <pre>
+          
+          
+          
+          
+          
+          
+        </pre>
+        
+        
+    </main>
+
+    <footer>
+        <nav class="bottom-nav">
+            <div class="bottom-nav__container">
+                <a href="wallet.html" class="bottom-nav__item">
+                    <i  class="material-symbols-outlined">
+		 account_balance_wallet</i>
+                    <p>Home</p>
+                </a>
+                <a href="payments.html" class="bottom-nav__item bottom-nav__item-active">
+                    <span class="material-symbols-outlined">wallet</span>
+                    <p>Payments</p>
+                </a>
+                <a href="settings.html" class="bottom-nav__item">
+                    <span class="material-symbols-outlined">settings</span>
+                    <p>Settings</p>
+                </a>
+            </div>
+        </nav>
+    </footer>
+
+    <script src="js/script.js"></script> <!-- Link to your JS file -->
+</body>
+</html>
