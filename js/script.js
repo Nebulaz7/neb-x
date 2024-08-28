@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('transactions', JSON.stringify(transactions));
     }
   
-    // Function to update the displayed balance
+    // Functon to update the displayed balance
     function updateBalance() {
         const balanceElement = document.getElementById('balance');
         if (balanceElement) {
