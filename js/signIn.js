@@ -1,4 +1,4 @@
-/* sign up page code begins */
+/* ssign up page code begins */
 
 function signUp() {
   const email = document.getElementById('email').value;
