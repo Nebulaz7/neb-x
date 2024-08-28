@@ -43,7 +43,7 @@ function login() {
 
   if (storedUser && storedUser.username === username && storedUser.password === password) {
     alert('Login successful! Redirecting to your dashboard.');
-    window.location.href = 'wallet.html'; // Redirect to the wallet dashboard
+    window.location.href = 'Wallet.html'; // Redirect to the wallet dashboard
   } else {
     alert('Incorrect username or password.');
   }
